@@ -17,3 +17,9 @@ To enable, add this line to your `jupyter_notebook_config.py`
 ```
 c.NotebookApp.contents_manager_class = 'amalthea.markdown_contents_manager.MarkdownContentsManager'
 ```
+
+To convert your existing notebooks into `amalthea` format use `jupyter nbconvert` tool.
+
+```
+jupyter nbconvert --to amalthea your_notebook.ipynb
+```
