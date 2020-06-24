@@ -3,5 +3,5 @@ from notebook.services.contents.largefilemanager import LargeFileManager
 
 class MarkdownContentsManager(LargeFileManager):
     def save(self, model, path=''):
-        from ipdb import set_trace; set_trace()
+        # this is where we put formatting code
         return super(MarkdownContentsManager, self).save(model, path)

@@ -1,11 +1,9 @@
 <!--
+metadata for notebook (in yaml?)
 somemetadata: foobar
 -->
 
-** Cell 1 **
-
 <!-- metadata for cell -->
-
 ```python
 print("foo")
 ```
