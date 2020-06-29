@@ -129,9 +129,5 @@ dmypy.json
 
 .pyre/
 
-<<<<<<< HEAD
-.vscode/
-=======
 .vscode/
 .DS_Store
->>>>>>> 0e58639fafb6b5f48ffb0dea708e2d98df51c6e3
