@@ -18,8 +18,4 @@ To convert your existing notebooks into `mystify` format use `jupyter nbconvert`
 
 ```
 jupyter nbconvert --to mystify your_notebook.ipynb
-<<<<<<< HEAD
 ```
-=======
-```
->>>>>>> 6303ef9525c9718f80f88c66350806a426d80ada
