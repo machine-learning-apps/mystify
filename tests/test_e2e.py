@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import unittest
 
-from mystify.markdown_contents_manager import MarkdownContentsManager
+from mystify.myst_contents_manager import MystContentsManager
 
 
 class E2ETestSuite(unittest.TestCase):

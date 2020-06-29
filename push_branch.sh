@@ -4,8 +4,13 @@
 # Add upstream repo (git remote add upstream git@github.com:machine-learning-apps/mystify.git)
 # Create a feature/topic branch (`git checkout -b awesome_feature)
 # Code fix/feature
+
+
 # don’t forget to add tests/specs and make sure they pass
 # Commit code on feature/topic branch (git add . && git commit -m “awesome”)
+
+
+
 # Checkout master (git checkout master)
 git checkout main
 
