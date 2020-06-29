@@ -36,7 +36,7 @@ cell:
 """
 
 
-class MarkdownContentsManager(LargeFileManager):
+class MystContentsManager(LargeFileManager):
     def save(self, model, path=''):
         # maybe we can use pre_save hooks (https://github.com/jupyter/notebook/blob/master/notebook/services/contents/manager.py#L86)
         self.log.debug("Converting into Amalthea markdown")
