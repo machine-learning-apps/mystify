@@ -13,10 +13,7 @@ flake8 = "*"
 pyyaml = "*"
 jinja2 = "*"
 notebook = "*"
-<<<<<<< HEAD
-=======
 jupyter = "*"
->>>>>>> 0e58639fafb6b5f48ffb0dea708e2d98df51c6e3
 
 [requires]
 python_version = "3.8"
