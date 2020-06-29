@@ -4,12 +4,14 @@ import os
 with open("README.md") as f:
     readme = f.read()
 
+
 def package_files():
     paths = []
     for (path, _, filenames) in os.walk("extra_files"):
         for filename in filenames:
             paths.append(os.path.join("..", path, filename))
     return paths
+
 
 extra_files = package_files()
 
