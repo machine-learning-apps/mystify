@@ -26,6 +26,8 @@ setup(
     keywords=["Jupyter", "Machine Learning", "Mystify"],  # Keywords that define your package best
     install_requires=[
         "wheel",
+        'jupyter',
+        'myst-parser'
     ],
     packages=["mystify"],
     include_package_data=True,

@@ -7,16 +7,16 @@
 # don’t forget to add tests/specs and make sure they pass
 # Commit code on feature/topic branch (git add . && git commit -m “awesome”)
 # Checkout master (git checkout master)
-git checkout master
+git checkout main
 
 # Pull latest from upstream (git pull upstream master)
-git pull upstream master
+git pull upstream main
 
 # Checkout feature/topic branch (git checkout awesome_feature)
 git checkout wb
 
 # Rebase your changes onto the latest changes in master (git rebase master)
-git rebase master
+git rebase main
 
 # Push your fix/feature branch to your fork (git push origin awesome_feature)
 git push origin wb
