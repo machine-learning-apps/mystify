@@ -1,12 +1,8 @@
-# Amalthea
-
-Amalthea (5th moon of Jupyter) is collection of plugins and tools that will improve experience of using Jupyter notebooks with GitHub.
-
 ## Installation
 
 TODO: publish to pip
 
-`pip install amalthea`
+`pip install mystify`
 
 ### Human readable, diffable and reviewable notebook format
 
@@ -15,11 +11,11 @@ Our `ContentManager` provides you with a way to save notebooks in format that's 
 To enable, add this line to your `jupyter_notebook_config.py`
 
 ```
-c.NotebookApp.contents_manager_class = 'amalthea.markdown_contents_manager.MarkdownContentsManager'
+c.NotebookApp.contents_manager_class = 'mystify.markdown_contents_manager.MarkdownContentsManager'
 ```
 
-To convert your existing notebooks into `amalthea` format use `jupyter nbconvert` tool.
+To convert your existing notebooks into `mystify` format use `jupyter nbconvert` tool.
 
 ```
-jupyter nbconvert --to amalthea your_notebook.ipynb
+jupyter nbconvert --to mystify your_notebook.ipynb
 ```
