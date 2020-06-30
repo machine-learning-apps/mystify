@@ -20,7 +20,6 @@ jobs:
         run: |
           pip install flake8
           flake8 mystify/ --count --ignore=E501 --show-source --statistics
-          flake8 tests/ --count --ignore=E501,E402 --show-source --statistics
       
       - name: Test
         id: python_test
@@ -28,3 +27,4 @@ jobs:
           pip install -e .
           pip install pytest
           pytest
+          
