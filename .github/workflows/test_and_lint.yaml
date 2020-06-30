@@ -1,0 +1,30 @@
+name: Lint and Test
+on: [push, pull_request]
+jobs:
+  lint:
+    name: Lint and Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Python 3.8
+        id: python_setup
+        uses: actions/setup-python@v1
+        with:
+          python-version: "3.8"
+
+      - name: Check Out Repository
+        id: checkout_repository
+        uses: actions/checkout@v1
+
+      - name: Lint
+        id: python_linting
+        run: |
+          pip install flake8
+          flake8 code/ --count --ignore=E501 --show-source --statistics
+          flake8 tests/ --count --ignore=E501,E402 --show-source --statistics
+      
+      - name: Test
+        id: python_test
+        run: |
+          pip install -e .
+          pip install pytest
+          pytest
