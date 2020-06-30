@@ -39,14 +39,10 @@ cell:
 class MystContentsManager(LargeFileManager):
     def save(self, model, path=''):
         # maybe we can use pre_save hooks (https://github.com/jupyter/notebook/blob/master/notebook/services/contents/manager.py#L86)
-        self.log.debug("Converting into Amalthea markdown")
-        rendered = Template(NOTEBOOK_TPL).render(notebook_metadata=yaml.dump(model["content"]["metadata"]), cells=model["content"]["cells"])
-        model["type"] = "file"
-        model["content"] = rendered
-        model["format"] = "text"
-        path = "/Amal.md"
-        return super(MarkdownContentsManager, self).save(model, path)
+        self.log.debug("Converting into Myst markdown")
+        return super(MystContentsManager, self).save(model, path)
 
     def get(self, path, content=True, type=None, format=None):
         # This is markdown to model
-        return super(MarkdownContentsManager, self).get(path, content, type, format)
+        self.log.debug("Opening Myst markdown")
+        return super(MystContentsManager, self).get(path, content, type, format)
