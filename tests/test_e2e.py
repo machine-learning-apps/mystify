@@ -11,7 +11,7 @@ def test_convert_nb_to_myst():
         temp_nb = convert.to_myst(model)
     with open("examples/example_notebook.mystnb") as f:
         myst_nb = f.read()
-    assert(temp_nb == myst_nb)
+    assert temp_nb == myst_nb
 
 
 def test_convert_myst_to_nb():
@@ -20,5 +20,5 @@ def test_convert_myst_to_nb():
     myst_model = convert.to_model(myst_nb)
     with open("examples/example_notebook.ipynb") as f:
         ipynb_model = json.load(f)
-    assert(myst_model == ipynb_model)
+    assert myst_model == ipynb_model
 
