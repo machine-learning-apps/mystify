@@ -1,11 +1,51 @@
 import json
+import jinja
 import yaml
 import re
 from myst_parser.main import default_parser
 
+SOURCE = """
+{source}
+"""
+
+OUTPUT = """
+{output}
+{{}}
+"""
+
+MARKDOWN = """
+---
+{{}}
+---
+"""
+
+CODE = """
+% cell
+{{}}
+{{}}
+% endcell
+"""
+
+METADATA = """{metadata}
+{{}}
+"""
+
+CELL_METADATA = """{cell_meta}
+---
+{{}}
+---
+"""
 
 def to_myst(model):
-    pass
+    sections = model['cells']
+    model_metadata = model['metadata']
+
+
+def to_model(myst):
+    md = default_parser("docutils")
+    tokens = md.parse(myst)
+    sections = _split_sections(tokens)
+    return sections
 
 
 def _parse_code_output(cell_section):
@@ -48,11 +88,3 @@ def _split_sections(tokens):
             sections['cells'].append(_parse_cell(append_to_cell))
             append_to_cell = None
     return sections
-
-
-def to_model(myst):
-    md = default_parser("docutils")
-    tokens = md.parse(myst)
-    sections = _split_sections(tokens)
-    return sections
-
