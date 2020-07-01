@@ -21,4 +21,3 @@ def test_convert_myst_to_nb():
     with open("examples/example_notebook.ipynb") as f:
         ipynb_model = json.load(f)
     assert myst_model == ipynb_model
-

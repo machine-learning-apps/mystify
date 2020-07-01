@@ -30,7 +30,7 @@ setup(
         "Machine Learning",
         "Mystify",
     ],  # Keywords that define your package best
-    install_requires=["wheel",],
+    install_requires=["wheel", ],
     packages=["mystify"],
     include_package_data=True,
     package_data={"": extra_files},
