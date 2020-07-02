@@ -18,7 +18,7 @@ def _parse_code_output(cell_section):
 
 
 def _parse_cell(cell):
-    cell_meta = yaml.load(cell[0].content)
+    cell_meta = yaml.safe_load(cell[0].content)
     if "metadata" not in cell_meta:
         cell_meta["metadata"] = {}
     for cell_section in cell[1:]:
@@ -38,7 +38,7 @@ def _split_sections(tokens):
     for token in tokens:
         if token.type == "fence" and token.info == "{metadata}":
             # Metadata yaml block
-            sections = yaml.load(token.content)
+            sections = yaml.safe_load(token.content)
             sections["cells"] = []
         if append_to_cell is not None:
             append_to_cell.append(token)

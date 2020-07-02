@@ -15,6 +15,7 @@ jinja2 = "*"
 notebook = "*"
 jupyter = "*"
 pytest = "*"
+myst-parser = "*"
 
 [requires]
 python_version = "3.8"
