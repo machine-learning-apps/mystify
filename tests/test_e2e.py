@@ -2,18 +2,18 @@ import pytest
 import json
 import sys
 import os
+from pathlib import Path
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from mystify import convert
 
-
 def test_convert_nb_to_myst():
-    with open("examples/example_notebook.ipynb") as f:
-        model = json.load(f)
-        temp_nb = convert.to_myst(model)
-    with open("examples/example_notebook.mystnb") as f:
-        myst_nb = f.read()
+    ipynb_text = Path("examples/example_notebook.ipynb").read_text()
+    temp_nb = convert.to_myst(ipynb_text)
+
+    myst_nb = Path("examples/example_notebook.mystnb").read_text()
+    
     assert temp_nb == myst_nb
 
 
