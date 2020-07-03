@@ -1,7 +1,10 @@
-# pylint: disable=protected-access,missing-function-docstring, missing-class-docstring, missing-module-docstring
-# -*- coding: utf-8 -*-
 import pytest
 import json
+import sys
+import os
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from mystify import convert
 
 
