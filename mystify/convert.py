@@ -14,6 +14,12 @@ def _parse_code_output(cell_section):
     if out['output_type'] == 'stream':
         out['text'] = cell_section.content.splitlines(True)
         out['name'] = 'stdout'
+    elif out['output_type'] == 'display_data':
+        out['data'] = {}
+        cell_section_content = yaml.load(cell_section.content)
+        for out_type in cell_section_content['data']:
+            out['data'][out_type['type']] = out_type['data']
+        out['metadata'] = cell_section_content['metadata']
     return out
 
 
@@ -54,5 +60,6 @@ def to_model(myst):
     md = default_parser("docutils")
     tokens = md.parse(myst)
     sections = _split_sections(tokens)
+    from IPython import embed; embed()
     return sections
 
